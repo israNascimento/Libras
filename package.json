@@ -1,0 +1,22 @@
+{
+  "name": "libras",
+  "version": "1.0.0",
+  "description": "Projeto de repositóriod e vídeos em Libras para a disciplina de Interação Humano Computador, UFRRJ 2017 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israNascimento/Libras.git"
+  },
+  "author": "Israel Nascimento, Rodrigo Rodrigues, Isaac Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israNascimento/Libras/issues"
+  },
+  "homepage": "https://github.com/israNascimento/Libras#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
