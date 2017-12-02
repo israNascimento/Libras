@@ -14,6 +14,7 @@ module.exports = function () {
     //app.use(expressValidator());
 
     load('routes', { cwd: 'app', verbose: true })
+        .then('infra')
         .into(app);
 /*
     app.use(function (req, res, next) {
