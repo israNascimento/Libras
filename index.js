@@ -1,9 +1,9 @@
-const app = require('express')();
+const app = require('./config/express')();
+var http = require('http').Server(app);
 
-app.listen(8080, () => {
-    console.log("Hello world!");
-});
+var server = http.listen(8080, function() {
+    var host = server.address().address;
+    var port = server.address().port;
 
-app.get("/", (req, res) => {
-    res.end("<b>Hello World!</b>");
+    console.log('Example app listening at http://%s:%s', host, port);
 });
