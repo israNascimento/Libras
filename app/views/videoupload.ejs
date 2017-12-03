@@ -1,19 +1,13 @@
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <form method="POST" action="/videos/upload">
-        <div class="jumbotron text-center" style="background-color: #0195a2; height: 100px; color: white; font-family:'Arial';">
-            <h1>Upload</h1>
-        </div>
-        <div class="container" style="width: 40%;">
-        <input class="form-control" type="text" name="titulo" placeholder="Titulo">
-        <input class="form-control" type="text" name="link" placeholder="Link do youtube">
-        <input class="form-control" type="text" name="descricao" placeholder="Descrição">
-        <select class="form-control"  name="categoria">
+        <input type="text" name="titulo" placeholder="Titulo">
+        <input type="text" name="link" placeholder="Link do youtube">
+        <input type="text" name="descricao" placeholder="Descrição">
+        <select name="categoria">
         <%categorias.forEach((value) => { %>
             <option value="<%=value.id%>"><%=value.nome%></option>
         <% }); %>
         </select>
-        <input class="btn" style="float: right; background-color: #0195a2; color: white; font-family:'Arial';" type="submit" value="Enviar">
-            </div>
+        <input type="submit" value="Enviar">
     </form>
 </html>
