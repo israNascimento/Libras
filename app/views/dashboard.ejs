@@ -9,27 +9,29 @@
     </head>
     
     <body>
-        
-        <div class="jumbotron text-center" style="background-color: #0195a2; height: 100px; color: white; font-family:'Arial';">
-        <h1>Dashboard</h1>
-        
+        <div class="text-center" style="background-color: #06457c; height: 100px; color: white; font-family:'Arial';">
+            <h1>Dashboard</h1>
+            <h4>Bem vindo, <%=user.nome%></h4>
         </div>
-        <div>
+        <br>
+        <div class="container">
             <a class="btn jumbotron" style="background-color: #21ad07; color: white; width: 250px; height: 200px; text-align: 
-                center; font-size: 30pt" href="/video">Android</a>
-            <a class="btn jumbotron" style="background-color: #d40b0b; color: #ffffff; width: 250px; height: 200px; text-align:
-                 center; font-size: 30pt" href="">Java</a>
+                center; font-size: 30pt" href="/videos/categoria/Android">Android</a>
+            <a class="btn jumbotron" style="background-color: #d40b0b; color: white; width: 250px; height: 200px; text-align:
+                 center; font-size: 30pt" href="/videos/categoria/Java">Java</a>
             <a class="btn jumbotron" style="background-color: #4f09be; color: white; width: 250px; height: 200px; text-align: 
-                center; font-size: 30pt" href="">C</a>
-            <a class="btn jumbotron" style="background-color: #057c86; color: #ffec0d; width: 250px; height: 200px; text-align: 
-                center; font-size: 30pt" href="">Python</a>
+                center; font-size: 30pt" href="/videos/categoria/C">C</a>
+            <a class="btn jumbotron" style="background-color: #057c86; color: white; width: 250px; height: 200px; text-align: 
+                center; font-size: 30pt" href="/videos/categoria/Android">Python</a>
             <a class="btn jumbotron" style="background-color: #0056a0; color: white; width: 250px; height: 200px; text-align: 
-                center; font-size: 30pt" href="">PHP</a>
-        
+                center; font-size: 30pt" href="/videos/categoria/PHP">PHP</a>        
         </div>
-        
-        <p class="btn" style="float: center">Interessado em ajudar? faça seu <a href="/videos/upload">Upload de vídeo</a></p>
-    
+        <div class="container">
+            <p class="alert alert-info">Interessado em ajudar? Faça seu <a href="/videos/upload" class="alert-link">
+                Upload de vídeo</a></p>
+            <form action="usuarios/logout" method="POST">
+                <input type="submit" class="btn btn-danger" value="Deslogar">
+            </form>
+        </div>
     </body>
-
 </html>

@@ -7,9 +7,13 @@ UsuarioDAO.prototype.save = function(user, callback) {
 }
 
 UsuarioDAO.prototype.login = function(user, callback) {
-   var query =  this._connection.query("SELECT * FROM usuario WHERE email=? AND senha=?", [user.email, user.senha], 
+    this._connection.query("SELECT * FROM usuario WHERE email=? AND senha=?", [user.email, user.senha], 
         callback);
-   console.log(query.sql);
+}
+
+UsuarioDAO.prototype.getUserByEmail = function(email, callback) {
+    this._connection.query("SELECT * FROM usuario WHERE email=?", email,
+        callback);
 }
 
 module.exports = function() {
