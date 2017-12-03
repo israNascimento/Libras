@@ -3,38 +3,49 @@
     <head>
         <title>Libras - Dashboard</title>
         <meta charset="utf-8">
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>    
     </head> 
     <body>
 
-<div class="container">
-    
-        <h2 style="text-align: center; color: #055867">Cadastre-se</h2><br>
-        <form method="POST" action="/usuarios/cadastro">
-            <div class="form-group">
-            <input class="form-control" type="text" name="nome" placeholder="Nome completo" required/>
-            </div>
-            <div class="form-group">
-            <input type="text" class="form-control" name="titulacao" placeholder="Maior titulação" required/>
-            </div>
-            <div class="form-group">
-            <input class="form-control" type="email" name="email" placeholder="E-mail (obrigatório ser instituciona)" required/>
-            </div>  
-            <div class="form-group">
-            <input class="form-control" type="text" name="lattes" placeholder="Link para o Lattes"/>
-            </div>
-            <div class="form-group">
-            <input class="form-control" type="password" name="senha" placeholder="Senha" required/><br>
-            </div>
-            <input class="btn" type="submit" />
-           
-        </form>
-    </div>
-        <br>
-         <div style="text-align: right"><a class="btn pull-left" style="width: 150px; background-color: red; color: white; margin-right: 20px; " href="index.ejs">Voltar</a></div>
+        <div class="container">
+            <h2 style="text-align: center; color: #055867">Cadastre-se</h2><br>
+            <%if(typeof message != 'undefined') { %>
+                <p class="alert alert-danger"><%=message%></p>
+            <% } %>
+            <form method="POST" action="/usuarios/cadastro">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="nome" placeholder="Nome completo" required/>
+                </div>
+                <div class="form-group">
+                    <select name="titulacao" class="custom-select">
+                        <option value="0" selected>Não há</option>
+                        <option value="D">D</option>
+                        <option value="M">M</option>
+                        <option value="E">E</option>
+                        <option value="B">B</option>
+                        <option value="L">L</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail (obrigatório ser institucional)"
+                    required/>
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lattes" placeholder="Link para o Lattes"/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="senha" placeholder="Senha" required/>
+                </div>                
+                <div class="form-group">
+                    <input class="form-control" type="password" name="repsenha" placeholder="Repita a senha" required/>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Cadastrar" />
+                <a class="btn btn-danger" href="/">Voltar</a>
+            </form>
+         </div>
     </body>
 </html>
 
