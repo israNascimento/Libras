@@ -36,7 +36,7 @@ module.exports = function(app) {
 
     app.post("/usuarios/logout", function(req, res) {
         req.session.destroy(function() {
-            res.render("login", {message: "Usuario desconectado com sucesso!"});
+            res.redirect("/");
         });
     });
 
