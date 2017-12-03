@@ -21,7 +21,6 @@ module.exports = function(app) {
             res.redirect("/");
             return;
         }
-        console.log("get");
         var connection = app.infra.connectionFactory();
         var dao = new app.infra.VideoDAO(connection);
         dao.categorias(function(err, result) {
@@ -38,15 +37,37 @@ module.exports = function(app) {
             res.redirect("/");
             return;
         }
-        var video = req.body;
-        video["link"] = youtubeId(video.link);
-        console.log(youtubeId(video.link));
-        video['usuario'] = req.session.user;
         var connection = app.infra.connectionFactory();
         var dao = new app.infra.VideoDAO(connection);
+
+        if(!req.body.titulo || !req.body.link || !req.body.descricao) {
+            dao.categorias(function(err, result) {
+                if(err) {
+                    res.end("Erro com o banco de dados");
+                    return;
+                }
+                res.render("videoupload.ejs", {categorias:result, message:"Preencha todos os campos!"});
+            });
+            return;
+        }
+        
+        var video = req.body;
+        video["link"] = youtubeId(video.link);
+        if(video["link"] == "error") {
+            dao.categorias(function(err, result) {
+                if(err) {
+                    res.end("Erro com o banco de dados");
+                    return;
+                }
+                res.render("videoupload.ejs", {categorias:result, message:"Link do youtube inválido!"});
+            });
+            return;
+        }
+        video['usuario'] = req.session.user.id;
         dao.upload(video, function(err) {
             if(err) {
-                res.redirect("/videos/upload");
+                console.log(err);
+                res.redirect("/videos/upload", {message: "Ocorreu um erro inesperado... Tente novamente"});
                 return;
             }
             res.redirect("/dashboard");
