@@ -15,19 +15,19 @@
         <h2 style="text-align: center; color: #055867">Cadastre-se</h2><br>
         <form method="POST" action="/usuarios/cadastro">
             <div class="form-group">
-            <input class="form-control" type="text" name="nome" placeholder="Nome completo"/>
+            <input class="form-control" type="text" name="nome" placeholder="Nome completo" required/>
             </div>
             <div class="form-group">
-            <input type="text" class="form-control" name="titulacao" placeholder="Maior titulação"/>
+            <input type="text" class="form-control" name="titulacao" placeholder="Maior titulação" required/>
             </div>
             <div class="form-group">
-            <input class="form-control" type="text" name="email" placeholder="E-mail (obrigatório ser instituciona)"/>
+            <input class="form-control" type="email" name="email" placeholder="E-mail (obrigatório ser instituciona)" required/>
             </div>  
             <div class="form-group">
             <input class="form-control" type="text" name="lattes" placeholder="Link para o Lattes"/>
             </div>
             <div class="form-group">
-            <input class="form-control" type="text" name="senha" placeholder="Senha"/><br>
+            <input class="form-control" type="password" name="senha" placeholder="Senha" required/><br>
             </div>
             <input class="btn" type="submit" />
            
