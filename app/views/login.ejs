@@ -1,0 +1,10 @@
+<%  include ./includes/header  %>
+    <% if(typeof message != 'undefined') {%>
+        <p> <%=message%> </p>
+    <% }%>
+        <form method="POST" action="/usuarios/login">
+            <input type="text" name="email" placeholder="Email"/><br>
+            <input type="text" name="senha" placeholder="Senha"/><br>
+            <input type="submit" />
+        </form>
+<% include ./includes/footer  %>
