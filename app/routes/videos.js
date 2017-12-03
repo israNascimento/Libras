@@ -12,7 +12,7 @@ module.exports = function(app) {
                 console.log(err);
                 return;
             }
-            res.render("video.ejs", {videos: result});
+            res.render("video.ejs", {videos: result, categoria: categoria});
         });
     });
 
