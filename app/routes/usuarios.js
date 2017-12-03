@@ -37,11 +37,17 @@ module.exports = function(app) {
         connection.end();
     });
 
+    app.post("/usuarios/logout", function(req, res) {
+        req.session.destroy(function() {
+            res.render("login", {message: "Usuario desconectado com sucesso!"});
+        });
+    });
+
     app.get("/usuarios/login", function(req, res) {
         res.render("login");
     });
 
-    app.get("/usuario/cadastro", function(req, res) {
+    app.get("/usuarios/cadastro", function(req, res) {
         res.render("cadastro");
     });
 }

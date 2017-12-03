@@ -1,5 +1,11 @@
 <%  include ./includes/header  %>
+    <% if(typeof user != 'undefined') { %>
+            <form action="usuarios/logout" method="POST">
+                <input type="submit" value="Deslogar">
+            </form>
+            <p>Bem vindo, usuário: <%=user%></p>
+  <%  } else {%>
     <a href="/usuarios/cadastro">Cadastro</a>
     <a href="/usuarios/login">Login</a>
-    <p><%=JSON.stringify(title)%></p>
+    <% } %>
 <% include ./includes/footer  %>

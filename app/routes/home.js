@@ -1,5 +1,9 @@
 module.exports = function (app) {
     app.get("/", function (req, res) {
-        res.render("index.ejs", { title: req.session });
+        if(req.session.user) {
+            res.render("index.ejs", {user: req.session.user});
+            return;
+        }
+        res.render("index.ejs");
     });
 }
