@@ -9,7 +9,6 @@ module.exports = function(app) {
             }
         });
         connection.end();
-
     });
 
     app.post("/usuarios/login", function(req, res) {
