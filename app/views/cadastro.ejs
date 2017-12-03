@@ -1,7 +1,6 @@
-<%  include ./includes/header  %>
    <html>
     <head>
-        <title>Libras - Dashboard</title>
+        <title>Libras - Cadastro</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -9,9 +8,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>    
     </head> 
     <body>
-
+        
+        <div style="height: 60px; background-color: #06457c; color: white" class="text-center">
+            <h1>Cadastre-se</h1>
+        </div>
+        <br>   
         <div class="container">
-            <h2 style="text-align: center; color: #055867">Cadastre-se</h2><br>
             <%if(typeof message != 'undefined') { %>
                 <p class="alert alert-danger"><%=message%></p>
             <% } %>
