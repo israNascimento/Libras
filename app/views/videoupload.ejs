@@ -1,0 +1,13 @@
+<html>
+    <form method="POST" action="/videos/upload">
+        <input type="text" name="titulo" placeholder="Titulo">
+        <input type="text" name="link" placeholder="Link do youtube">
+        <input type="text" name="descricao" placeholder="Descrição">
+        <select name="categoria">
+        <%categorias.forEach((value) => { %>
+            <option value="<%=value.id%>"><%=value.nome%></option>
+       <% }); %>
+        </select>
+        <input type="submit" value="Enviar">
+    </form>
+</html>

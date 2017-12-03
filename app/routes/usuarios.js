@@ -1,6 +1,5 @@
 module.exports = function(app) {
     app.post("/usuarios/cadastro", function(req, res) {
-        console.log(req.body);
         var user = req.body;
         var connection = app.infra.connectionFactory();
         var dao = new app.infra.UsuarioDAO(connection);
@@ -8,7 +7,6 @@ module.exports = function(app) {
             if(err) {
                 throw err;
             }
-            console.log("Sucesso");
         });
         connection.end();
 
