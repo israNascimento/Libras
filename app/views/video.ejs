@@ -11,33 +11,15 @@
     
     <body>
     
-        <h1 class=" text-center" style="background-color: #06457c; height: 60px; color: white; font-family:'Arial';">
-            <%=categoria%></h1>
+        <h1 class="jumbotron text-center" style="background-color: #0195a2; height: 100px; color: white; font-family:'Arial';">Android</h1>
         
         <div class="span4" style="text-align: center;">        
-            <ul>
-                <%if(videos.length > 0) {
-                        videos.forEach((value) => { %>
-                        <li>
-                            <table>
-                                <tr>
-                                    <td>Título: <%=value.titulo%></td>
-                                    <td>Descrição: <%=value.descricao%></td>
-                                </tr>
-                                <tr>
-                                    <td><iframe  width="560" height="315" src="https://www.youtube.com/embed/<%=value.link%>" 
-                                        frameborder="0" allowfullscreen></iframe></td>
-                                </tr>
-                            </table>
-                        </li>
-                 <% })} else { %>
-                        <p>Não existe vídeos para essa categoria</p>
-                 <% } %>
-            </ul>
+            
+           <iframe  width="560" height="315" src="https://www.youtube.com/embed/qe-FAu-q4zQ" frameborder="0" allowfullscreen></iframe>
         </div>
         <br><br>
         
-        <div style="text-align: right"><a class="btn pull-left" style="width: 150px; background-color: red; color: white; margin-right: 20px; " href="/dashboard">Voltar</a></div>
+        <div style="text-align: right"><a class="btn pull-left" style="width: 150px; background-color: red; color: white; margin-right: 20px; " href="dashboard.html">Voltar</a></div>
     
     </body>
 

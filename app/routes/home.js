@@ -4,9 +4,8 @@ module.exports = function (app) {
             res.redirect("/dashboard");
             return;
         }
-        res.render("login.ejs", {message: req.session.message});
-        req.session.destroy();
-});
+        res.render("login.ejs");
+    });
 
     app.get("/dashboard", function(req, res) {
         if(!req.session.user) {
