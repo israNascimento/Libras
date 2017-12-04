@@ -1,25 +1,44 @@
 <html>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Stashed changes
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-=======
->>>>>>> parent of 4d11fd1... upload css
-    <form method="POST" action="/videos/upload">
-        <div class="jumbotron text-center" style="background-color: #0195a2; height: 100px; color: white; font-family:'Arial';">
-            <h1>Upload</h1>
+    <head>
+        <title>Libras - Dashboard</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>    
+    </head>
+    <body>
+        <div style="height: 60px; background-color: #06457c; color: white" class="text-center">
+            <h1>Upload de vídeo</h1>
+        </div><br>  
+        <div class="container">
+            <%if(typeof message != 'undefined') { %>
+                <p class="alert alert-danger"><%=message%></p>
+            <% } %>
+            <form method="POST" action="/videos/upload">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="titulo" placeholder="Titulo" required/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="link" placeholder="Link do youtube" required/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="textarea" name="descricao" placeholder="Descrição" required/>
+                </div>
+                <div class="form-group">
+                    <select name="categoria" class="custom-select">
+                    <%categorias.forEach((value) => { %>
+                        <option value="<%=value.id%>"><%=value.nome%></option>
+                    <% }); %>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Enviar" />
+                    <a class="btn btn-danger" href="/">Voltar</a>
+                </div>
+
+            </form>
         </div>
-        <div class="container" style="width: 40%;">
-        <input class="form-control" type="text" name="titulo" placeholder="Titulo">
-        <input class="form-control" type="text" name="link" placeholder="Link do youtube">
-        <input class="form-control" type="text" name="descricao" placeholder="Descrição">
-        <select class="form-control"  name="categoria">
-        <%categorias.forEach((value) => { %>
-            <option value="<%=value.id%>"><%=value.nome%></option>
-        <% }); %>
-        </select>
-        <input class="btn" style="float: right; background-color: #0195a2; color: white; font-family:'Arial';" type="submit" value="Enviar">
-            </div>
+    </body>
 </html>
