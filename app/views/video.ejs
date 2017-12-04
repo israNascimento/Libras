@@ -14,20 +14,18 @@
         <h1 class=" text-center" style="background-color: #06457c; height: 60px; color: white; font-family:'Arial';">
             <%=categoria%></h1>
         
-        <div class="span4" style="text-align: center;">        
-            <ul>
+        <div class="container">        
+            <ul class="list-group">
                 <%if(videos.length > 0) {
                         videos.forEach((value) => { %>
-                        <li>
-                            <table>
-                                <tr>
-                                    <td>Título: <%=value.titulo%></td>
-                                    <td>Descrição: <%=value.descricao%></td>
-                                </tr>
-                                <tr>
-                                    <td><iframe  width="560" height="315" src="https://www.youtube.com/embed/<%=value.link%>" 
-                                        frameborder="0" allowfullscreen></iframe></td>
-                                </tr>
+                        <li class="list-group-item">
+                            <table class="table">
+                                    <tr><h3><%=value.titulo%></h3></tr>
+                                    <tr>
+                                        <td><iframe  width="560" height="315" src="https://www.youtube.com/embed/<%=value.link%>" 
+                                        frameborder="0" allowfullscreen></iframe><td>
+                                        <td><h5><%=value.descricao%></h5></td>
+                                    </tr>                            
                             </table>
                         </li>
                  <% })} else { %>
@@ -37,7 +35,10 @@
         </div>
         <br><br>
         
-        <div style="text-align: right"><a class="btn pull-left" style="width: 150px; background-color: red; color: white; margin-right: 20px; " href="/dashboard">Voltar</a></div>
+        <div style="float: right">
+            <a class="btn btn-danger" style="position: fixed; bottom: 20px; right:20px;"  href="/dashboard">
+                Ir para o dashboard</a>
+        </div>
     
     </body>
 

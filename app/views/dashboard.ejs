@@ -11,7 +11,11 @@
     <body>
         <div class="text-center" style="background-color: #06457c; height: 100px; color: white; font-family:'Arial';">
             <h1>Dashboard</h1>
+            <%if(typeof user != 'undefined') { %>
             <h4>Bem vindo, <%=user.nome%></h4>
+          <%  } else { %>
+            <h4>Bem vindo ao Libras!</h4>
+         <% } %>
         </div>
         <br>
         <div class="container">
@@ -27,11 +31,15 @@
                 center; font-size: 30pt" href="/videos/categoria/PHP">PHP</a>        
         </div>
         <div class="container">
+            <%if(typeof user != 'undefined') { %>
             <p class="alert alert-info">Interessado em ajudar? Faça seu <a href="/videos/upload" class="alert-link">
                 Upload de vídeo</a></p>
             <form action="usuarios/logout" method="POST">
                 <input type="submit" class="btn btn-danger" value="Deslogar">
             </form>
+            <% } else { %>
+                <a href="/usuarios/login">Faça seu login</a> ou <a href="/usuarios/cadastro">cadastre-se</a>
+            <% } %>
         </div>
     </body>
 </html>

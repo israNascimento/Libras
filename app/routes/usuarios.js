@@ -48,7 +48,7 @@ module.exports = function(app) {
                 return;
             }
             if(result.length <= 0) {
-                res.render("login", {message: "Usuario ou senha invalidos!"});
+                res.render("login_novo", {message: "Usuario ou senha invalidos!"});
                 return;
             }
             req.session.user = {
@@ -67,7 +67,7 @@ module.exports = function(app) {
     });
 
     app.get("/usuarios/login", function(req, res) {
-        res.render("login");
+        res.render("login_novo");
     });
 
     app.get("/usuarios/cadastro", function(req, res) {

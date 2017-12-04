@@ -1,0 +1,36 @@
+   <html>
+    <head>
+        <title>Libras - Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>    
+    </head> 
+    <body>
+        
+        <div style="height: 60px; background-color: #06457c; color: white" class="text-center">
+            <h1>Realize seu login</h1>
+        </div>
+        <br>   
+        <div class="container">
+            <%if(typeof message != 'undefined') { %>
+                <p class="alert alert-danger"><%=message%></p>
+            <% } %>
+            <form method="POST" action="/usuarios/login">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail"
+                    required/>
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="password" name="senha" placeholder="Senha" required/>
+                </div>                
+                <input class="btn btn-primary" type="submit" value="Entrar" />
+                <a class="btn btn-danger" href="/">Voltar</a>
+            </form>
+         </div>
+    </body>
+</html>
+
+
+<% include ./includes/footer  %>
