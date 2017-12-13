@@ -1,9 +1,5 @@
 module.exports = function(app) {
     app.get("/videos/categoria/:categoria", function(req, res) {
-        if (!req.session.user) {
-            res.redirect("/");
-            return;
-        }
         var categoria = req.params.categoria;
         var connection = app.infra.connectionFactory();
         var dao = new app.infra.VideoDAO(connection);
